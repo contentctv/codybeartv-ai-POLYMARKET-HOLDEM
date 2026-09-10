@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DeskRouteImport } from './routes/desk'
+import { Route as DevAccessRouteImport } from './routes/dev-access'
 import { Route as FactoryRouteImport } from './routes/factory'
 import { Route as FlywheelRouteImport } from './routes/flywheel'
 import { Route as LeaseRouteImport } from './routes/lease'
@@ -30,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const DeskRoute = DeskRouteImport.update({
   id: '/desk',
   path: '/desk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevAccessRoute = DevAccessRouteImport.update({
+  id: '/dev-access',
+  path: '/dev-access',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FactoryRoute = FactoryRouteImport.update({
@@ -86,6 +92,7 @@ const ApiStripeWebhookRoute = ApiStripeWebhookRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -100,6 +107,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -115,6 +123,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -131,6 +140,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -145,6 +155,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -159,6 +170,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -174,6 +186,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DeskRoute: typeof DeskRoute
+  DevAccessRoute: typeof DevAccessRoute
   FactoryRoute: typeof FactoryRoute
   FlywheelRoute: typeof FlywheelRoute
   LeaseRoute: typeof LeaseRoute
@@ -200,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/desk'
       fullPath: '/desk'
       preLoaderRoute: typeof DeskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dev-access': {
+      id: '/dev-access'
+      path: '/dev-access'
+      fullPath: '/dev-access'
+      preLoaderRoute: typeof DevAccessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/factory': {
@@ -278,6 +298,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DeskRoute: DeskRoute,
+  DevAccessRoute: DevAccessRoute,
   FactoryRoute: FactoryRoute,
   FlywheelRoute: FlywheelRoute,
   LeaseRoute: LeaseRoute,

@@ -12,7 +12,7 @@ function Login() {
       <h1 className="font-display text-3xl">Sign in</h1>
       <p className="text-sm text-cream/80">
         X OAuth 2.0 PKCE through the Grok broker. Follow @{FOLLOW_HANDLE} after sign-in so tools unlock.
-        Follower status is never faked.
+        Then claim an 8-hour <code>cca_</code> DEVELOPER ACCESS key. Follower status is never faked.
       </p>
       {authEnabled && x ? (
         <Button className="w-full" onClick={() => void signIn(x.providerId, { callbackURL: "/pass" })}>
@@ -24,6 +24,9 @@ function Login() {
       <a className="block text-sm text-teal underline-offset-4 hover:underline" href={FOLLOW_INTENT}>
         Follow @{FOLLOW_HANDLE}
       </a>
+      <Link to="/dev-access" className="block text-sm text-teal underline-offset-4 hover:underline">
+        8-hour developer access
+      </Link>
       <Link to="/" className="block text-sm text-muted">
         Back to the felt
       </Link>

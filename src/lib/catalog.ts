@@ -63,6 +63,13 @@ export const MODELS: ModelSku[] = [
     unlocks: "Byproduct chapters after tuition, never a cheap prompt-book SKU.",
   },
   {
+    id: "dev-access",
+    name: "Developer access",
+    price: "Free · 8h after follow",
+    rail: "cca_ login credential. HITL. Not a wallet.",
+    unlocks: "Paper tools for 8 hours. No CLOB. No LIVE_TRADING. Upsell Supercool + Pages.",
+  },
+  {
     id: "agency",
     name: "Turnkey agency desk",
     price: "Custom",

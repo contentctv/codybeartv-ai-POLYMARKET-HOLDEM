@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { FOLLOW_HANDLE, FOLLOW_INTENT, TIERS } from "@/lib/flags";
+import { FOLLOW_HANDLE, FOLLOW_INTENT, SUPERCOOL_PRODUCT, PAGES_LANDING, BUY_KIT_HREF, TIERS } from "@/lib/flags";
 import { useCurrentUserState } from "@/lib/auth/use-current-user";
 import { attestFollow, checkoutLink, enqueueHitl, getGate, getPublicRails, type GateView } from "@/lib/server/fns";
 import { Badge } from "@/components/ui/badge";
@@ -130,10 +130,34 @@ function Pass() {
           </CardContent>
         </Card>
       </div>
+      <Card>
+        <CardHeader>
+          <CardTitle>{TIERS.DEV_ACCESS.label}</CardTitle>
+          <CardDescription>
+            Free {TIERS.DEV_ACCESS.hours}h <code>cca_</code> login key after follow. Not a wallet.
+            Not CLOB. LIVE_TRADING=false.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Button asChild variant="outline">
+            <Link to="/dev-access">Claim 8-hour developer access</Link>
+          </Button>
+        </CardContent>
+      </Card>
       <p className="text-sm text-muted">
-        FREE_TIER: {TIERS.FREE.creditsPerDay} credits/day after follow. Rails B/C (X Money, PayPal,
-        Cash App, Bitcoin Jungle Lightning, SINPE Móvil CBTV-######, USDC receipt, EIP-1193, HTTP
-        402) stay on the desk as HITL.
+        FREE_TIER: {TIERS.FREE.creditsPerDay} credits/day after follow. {TIERS.DEV_ACCESS.label}:{" "}
+        {TIERS.DEV_ACCESS.hours}h <code>cca_</code> login key —{" "}
+        <Link to="/dev-access">claim on Developer access</Link>. Rails B/C (X Money, PayPal, Cash
+        App, Bitcoin Jungle Lightning, SINPE Móvil CBTV-######, USDC receipt, EIP-1193, HTTP 402)
+        stay on the desk as HITL. Kit upsell:{" "}
+        <a className="text-teal underline-offset-4 hover:underline" href={SUPERCOOL_PRODUCT}>
+          Supercool $47
+        </a>
+        {" · "}
+        <a className="text-teal underline-offset-4 hover:underline" href={PAGES_LANDING}>
+          Pages
+        </a>
+        . Buy kit stays <code>{BUY_KIT_HREF}</code>.
       </p>
       {msg ? <p className="text-sm text-teal">{msg}</p> : null}
       {isPending ? <p className="text-xs text-muted">Checking session…</p> : null}

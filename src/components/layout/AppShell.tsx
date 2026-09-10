@@ -18,6 +18,7 @@ const NAV = [
   { to: "/flywheel", label: "News" },
   { to: "/mba", label: "MBA" },
   { to: "/pass", label: "Pass" },
+  { to: "/dev-access", label: "Dev access" },
 ];
 
 const DOCK = [
