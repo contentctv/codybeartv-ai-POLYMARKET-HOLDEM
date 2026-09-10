@@ -19,6 +19,9 @@ npm run build
 Static Cipher Coast 3-IN-1 page: [`site/index.html`](site/index.html) (Pages copy: [`docs/`](docs/)).
 
 - Buy kit $47 stays `href="#"` until a human pastes `STRIPE_LINK`
+- Supercool kit listed: https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba
+- Pages: https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/ from main `/docs`
+- 8-hour free DEVELOPER ACCESS (`cca_` after follow @ContentCTV): [`docs/DEV_ACCESS.md`](docs/DEV_ACCESS.md)
 - Discord HOLD
 - Operator docs: [`docs/PAYWALL.md`](docs/PAYWALL.md) · [`docs/APPROVAL.md`](docs/APPROVAL.md) · [`CHANNELS.md`](CHANNELS.md) · [`SUPERCOOL_SHOP_LISTING.md`](SUPERCOOL_SHOP_LISTING.md)
 

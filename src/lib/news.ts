@@ -29,7 +29,7 @@ export const ISSUE = {
   },
   sop: [
     "Follow @ContentCTV before tools unlock. Intent URL + attestation. Optional X API if X_FOLLOW_BEARER exists. Never fake follower status.",
-    "FREE_TIER: 24 credits/day after follow. PAID_24HR: $11.99 or 12 USDC, 24h, 400 credits. ENTREPRENEUR: $49.99 or 50 USDC, 30d, 2,000 credits.",
+    "FREE_TIER: 24 credits/day after follow. DEV_ACCESS_8HR: cca_ login key, 8 hours, not a wallet. PAID_24HR: $11.99 or 12 USDC, 24h, 400 credits. ENTREPRENEUR: $49.99 or 50 USDC, 30d, 2,000 credits.",
     "HITL on payment, post, withdraw, refund. Stripe Option 1 is a hosted Payment Link on acct_1SgwhY04rVaWG22X when the env URL exists. Webhooks fail closed without whsec_.",
   ],
   merchant: [

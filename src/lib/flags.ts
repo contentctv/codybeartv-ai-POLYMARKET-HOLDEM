@@ -16,6 +16,15 @@ export const DEFAULT_MODEL = "grok-4.6";
 export const FOLLOW_HANDLE = "ContentCTV";
 export const FOLLOW_INTENT = "https://x.com/intent/follow?screen_name=ContentCTV";
 
+/** Supercool $47 kit — listed. Stripe Buy kit stays `#` until STRIPE_LINK. */
+export const SUPERCOOL_PRODUCT =
+  "https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba";
+export const PAGES_LANDING = "https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/";
+export const BUY_KIT_HREF = "#" as const;
+
+/** Follow-pass login credential. Not a wallet. Not CLOB. */
+export const DEV_ACCESS_HOURS = 8;
+
 export const STRIPE_ACCOUNT = "acct_1SgwhY04rVaWG22X";
 
 export const TIERS = {
@@ -23,6 +32,13 @@ export const TIERS = {
     id: "FREE_TIER" as const,
     creditsPerDay: 24,
     label: "Follow pass",
+  },
+  DEV_ACCESS: {
+    id: "DEV_ACCESS_8HR" as const,
+    hours: DEV_ACCESS_HOURS,
+    credits: 24,
+    label: "Developer access",
+    kind: "login_credential" as const,
   },
   PAID_24HR: {
     id: "PAID_24HR" as const,

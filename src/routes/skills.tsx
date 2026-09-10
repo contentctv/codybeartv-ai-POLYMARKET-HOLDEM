@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 const TOOLS = [
   { name: "Felt engine", need: "Follow", href: "/" },
   { name: "Paper book write", need: "Follow + sign-in", href: "/markets" },
+  { name: "8hr DEV ACCESS key", need: "Follow + claim cca_", href: "/dev-access" },
   { name: "Desk HITL", need: "PAID_24HR", href: "/desk" },
   { name: "MBA stamp", need: "ENTREPRENEUR", href: "/mba" },
 ];
@@ -34,7 +35,8 @@ function Skills() {
       <h1 className="font-display text-4xl">Skills</h1>
       <p className="max-w-2xl text-cream/80">
         Catalog is public. Tools wait on a follow of @{FOLLOW_HANDLE}. We never invent follower status.
-        Optional X API runs only when X_FOLLOW_BEARER exists.
+        Optional X API runs only when X_FOLLOW_BEARER exists. An 8-hour <code>cca_</code> DEVELOPER ACCESS
+        key is the follow-pass login credential — <Link to="/dev-access">claim it</Link>. Not a wallet.
       </p>
       {!unlocked ? (
         <div className="flex flex-wrap gap-2">
