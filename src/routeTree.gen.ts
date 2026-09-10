@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DeskRouteImport } from './routes/desk'
+import { Route as DevAccessRouteImport } from './routes/dev-access'
 import { Route as FactoryRouteImport } from './routes/factory'
 import { Route as FlywheelRouteImport } from './routes/flywheel'
 import { Route as LeaseRouteImport } from './routes/lease'
@@ -18,7 +19,6 @@ import { Route as LoginRouteImport } from './routes/login'
 import { Route as MarketsRouteImport } from './routes/markets'
 import { Route as MbaRouteImport } from './routes/mba'
 import { Route as PassRouteImport } from './routes/pass'
-import { Route as DevAccessRouteImport } from './routes/dev-access'
 import { Route as SkillsRouteImport } from './routes/skills'
 import { Route as ApiAuthSplatRouteImport } from './routes/api/auth/$'
 import { Route as ApiStripeWebhookRouteImport } from './routes/api/stripe/webhook'
@@ -31,6 +31,11 @@ const IndexRoute = IndexRouteImport.update({
 const DeskRoute = DeskRouteImport.update({
   id: '/desk',
   path: '/desk',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DevAccessRoute = DevAccessRouteImport.update({
+  id: '/dev-access',
+  path: '/dev-access',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FactoryRoute = FactoryRouteImport.update({
@@ -68,11 +73,6 @@ const PassRoute = PassRouteImport.update({
   path: '/pass',
   getParentRoute: () => rootRouteImport,
 } as any)
-const DevAccessRoute = DevAccessRouteImport.update({
-  id: '/dev-access',
-  path: '/dev-access',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const SkillsRoute = SkillsRouteImport.update({
   id: '/skills',
   path: '/skills',
@@ -92,6 +92,7 @@ const ApiStripeWebhookRoute = ApiStripeWebhookRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -99,7 +100,6 @@ export interface FileRoutesByFullPath {
   '/markets': typeof MarketsRoute
   '/mba': typeof MbaRoute
   '/pass': typeof PassRoute
-  '/dev-access': typeof DevAccessRoute
   '/skills': typeof SkillsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -107,6 +107,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -114,7 +115,6 @@ export interface FileRoutesByTo {
   '/markets': typeof MarketsRoute
   '/mba': typeof MbaRoute
   '/pass': typeof PassRoute
-  '/dev-access': typeof DevAccessRoute
   '/skills': typeof SkillsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -123,6 +123,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/desk': typeof DeskRoute
+  '/dev-access': typeof DevAccessRoute
   '/factory': typeof FactoryRoute
   '/flywheel': typeof FlywheelRoute
   '/lease': typeof LeaseRoute
@@ -130,7 +131,6 @@ export interface FileRoutesById {
   '/markets': typeof MarketsRoute
   '/mba': typeof MbaRoute
   '/pass': typeof PassRoute
-  '/dev-access': typeof DevAccessRoute
   '/skills': typeof SkillsRoute
   '/api/auth/$': typeof ApiAuthSplatRoute
   '/api/stripe/webhook': typeof ApiStripeWebhookRoute
@@ -140,6 +140,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -147,7 +148,6 @@ export interface FileRouteTypes {
     | '/markets'
     | '/mba'
     | '/pass'
-    | '/dev-access'
     | '/skills'
     | '/api/auth/$'
     | '/api/stripe/webhook'
@@ -155,6 +155,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -162,7 +163,6 @@ export interface FileRouteTypes {
     | '/markets'
     | '/mba'
     | '/pass'
-    | '/dev-access'
     | '/skills'
     | '/api/auth/$'
     | '/api/stripe/webhook'
@@ -170,6 +170,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/desk'
+    | '/dev-access'
     | '/factory'
     | '/flywheel'
     | '/lease'
@@ -177,7 +178,6 @@ export interface FileRouteTypes {
     | '/markets'
     | '/mba'
     | '/pass'
-    | '/dev-access'
     | '/skills'
     | '/api/auth/$'
     | '/api/stripe/webhook'
@@ -186,6 +186,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DeskRoute: typeof DeskRoute
+  DevAccessRoute: typeof DevAccessRoute
   FactoryRoute: typeof FactoryRoute
   FlywheelRoute: typeof FlywheelRoute
   LeaseRoute: typeof LeaseRoute
@@ -193,7 +194,6 @@ export interface RootRouteChildren {
   MarketsRoute: typeof MarketsRoute
   MbaRoute: typeof MbaRoute
   PassRoute: typeof PassRoute
-  DevAccessRoute: typeof DevAccessRoute
   SkillsRoute: typeof SkillsRoute
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute
   ApiStripeWebhookRoute: typeof ApiStripeWebhookRoute
@@ -213,6 +213,13 @@ declare module '@tanstack/react-router' {
       path: '/desk'
       fullPath: '/desk'
       preLoaderRoute: typeof DeskRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/dev-access': {
+      id: '/dev-access'
+      path: '/dev-access'
+      fullPath: '/dev-access'
+      preLoaderRoute: typeof DevAccessRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/factory': {
@@ -264,13 +271,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PassRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/dev-access': {
-      id: '/dev-access'
-      path: '/dev-access'
-      fullPath: '/dev-access'
-      preLoaderRoute: typeof DevAccessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/skills': {
       id: '/skills'
       path: '/skills'
@@ -298,6 +298,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DeskRoute: DeskRoute,
+  DevAccessRoute: DevAccessRoute,
   FactoryRoute: FactoryRoute,
   FlywheelRoute: FlywheelRoute,
   LeaseRoute: LeaseRoute,
@@ -305,7 +306,6 @@ const rootRouteChildren: RootRouteChildren = {
   MarketsRoute: MarketsRoute,
   MbaRoute: MbaRoute,
   PassRoute: PassRoute,
-  DevAccessRoute: DevAccessRoute,
   SkillsRoute: SkillsRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiStripeWebhookRoute: ApiStripeWebhookRoute,
