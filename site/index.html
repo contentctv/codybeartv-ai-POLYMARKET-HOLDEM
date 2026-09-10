@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CIPHER COAST 3-IN-1</title>
+  <meta name="description" content="CIPHER COAST 3-IN-1 — paper table and academy door. Education only. Felt stays paper chips. Polymarket drawer stays WATCH." />
+  <meta name="robots" content="index,follow" />
+  <link rel="icon" href="poster.jpg" type="image/jpeg" />
+  <style>
+    :root {
+      --felt: #07110e;
+      --felt-2: #0c1a16;
+      --ink: #f4eee4;
+      --muted: #9aa89f;
+      --gold: #d4b46a;
+      --gold-bright: #f4eee4;
+      --ember: #e0703a;
+      --teal: #2a9b8f;
+      --line: #1e332c;
+      --card: #0c1a16;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body {
+      min-height: 100%;
+      background: var(--felt);
+      color: var(--ink);
+      font-family: Palatino, "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+    body {
+      background:
+        radial-gradient(ellipse 70% 40% at 18% 8%, rgba(224, 112, 58, 0.22), transparent 55%),
+        radial-gradient(ellipse 50% 35% at 80% 0%, rgba(42, 155, 143, 0.28), transparent 50%),
+        var(--felt);
+    }
+    a { color: var(--teal); }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; padding: 28px 0 64px; }
+    .banner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 18px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 14px;
+      margin-bottom: 28px;
+    }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip {
+      border: 1px solid var(--line);
+      padding: 4px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+    }
+    .chip.hold { color: #c9a227; border-color: #5a4a20; }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 36px;
+      align-items: center;
+      margin-bottom: 48px;
+    }
+    .poster-frame {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.55);
+      border: 1px solid #3a2a18;
+    }
+    .poster-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .kicker {
+      color: var(--gold);
+      letter-spacing: 0.28em;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    h1 {
+      font-size: clamp(2.4rem, 6vw, 4.4rem);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--gold-bright);
+      line-height: 0.95;
+    }
+    .sub {
+      margin: 12px 0 8px;
+      color: var(--ember);
+      letter-spacing: 0.28em;
+      font-size: 1.35rem;
+      text-transform: uppercase;
+    }
+    .rule {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--gold);
+      margin: 10px 0 18px;
+    }
+    .rule::before, .rule::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    }
+    .lede {
+      max-width: 42rem;
+      color: #d7cbb0;
+      line-height: 1.55;
+      margin-bottom: 10px;
+    }
+    .motto { color: var(--muted); font-style: italic; margin-bottom: 22px; }
+    .weather {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--gold);
+      margin: 8px 0 22px;
+      letter-spacing: 0.2em;
+      font-size: 12px;
+    }
+    .weather svg { width: 22px; height: 22px; stroke: var(--gold); fill: none; stroke-width: 1.4; }
+    .actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 11px 16px;
+      border-radius: 4px;
+      letter-spacing: 0.04em;
+      font-weight: 700;
+      font-family: inherit;
+      border: 1px solid transparent;
+    }
+    .btn-primary { background: var(--teal); color: #07110e; }
+    .btn-ghost { border-color: var(--teal); color: var(--ink); background: transparent; }
+    .btn-stripe { background: var(--ember); color: #fff6e8; }
+    .btn-hold, .btn[aria-disabled="true"] {
+      border-color: #4a4030;
+      color: #8a7a60;
+      background: transparent;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    .stripe-note {
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    h2 {
+      font-size: 1.4rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin: 42px 0 16px;
+    }
+    .doors {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 15px;
+    }
+    .doors th, .doors td {
+      border-bottom: 1px solid var(--line);
+      padding: 12px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    .doors th { color: var(--gold); letter-spacing: 0.08em; font-size: 12px; text-transform: uppercase; }
+    .state { font-variant: small-caps; letter-spacing: 0.08em; color: var(--gold-bright); }
+    .run {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 18px 20px;
+      overflow-x: auto;
+      color: #d7ffe8;
+      font-family: "IBM Plex Mono", "JetBrains Mono", ui-monospace, monospace;
+      font-size: 13px;
+      line-height: 1.55;
+      white-space: pre;
+    }
+    .flags { color: var(--muted); font-size: 14px; margin-top: 12px; }
+    .notice {
+      border: 1px solid #5a3a22;
+      background: #120c0a;
+      padding: 18px 20px;
+      margin-top: 28px;
+      color: #e6d3b4;
+      line-height: 1.6;
+    }
+    footer {
+      margin-top: 48px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.6;
+    }
+    .mark {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .trio {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin: 8px 0 36px;
+    }
+    .trio article {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: 18px 16px;
+      min-height: 160px;
+    }
+    .trio h3 {
+      color: var(--teal);
+      letter-spacing: 0.18em;
+      font-size: 12px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .trio.ember h3:first-child, .trio article:nth-child(2) h3 { color: var(--ember); }
+    .trio p { color: #d7cbb0; line-height: 1.45; font-size: 15px; }
+    @media (max-width: 820px) {
+      .hero { grid-template-columns: 1fr; }
+      h1 { font-size: 2.4rem; }
+      .doors { font-size: 13px; }
+      .trio { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <div class="banner">
+      <span>CODYBEARTV GLOBAL MEDIA STUDIOS LIMITADA · PAPER HOST</span>
+      <div class="chips">
+        <span class="chip">STRIPE_LIVE=off</span>
+        <span class="chip">DNS_CUTOVER=off</span>
+        <span class="chip hold">Discord HOLD</span>
+        <span class="chip">Wallets off</span>
+      </div>
+    </div>
+
+    <section class="hero">
+      <div class="poster-frame">
+        <img src="poster.jpg" width="1200" height="630" alt="POLYMARKET HOLD'EM night table: lamp, paper chips, cards, and ink on felt" />
+      </div>
+      <div>
+        <p class="kicker">Paper table · Academy door</p>
+        <h1>CIPHER COAST</h1>
+        <p class="sub">3-IN-1</p>
+        <div class="rule">★</div>
+        <div class="weather" aria-label="Paper weather">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 14h11a4 4 0 0 0 0-8 6 6 0 0 0-11 2"/><path d="M4 18h.01M8 18h.01M12 18h.01"/><path d="M17 8c.8-1.6 2.4-2 3.5-1"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 14h11a4 4 0 0 0 0-8 6.2 6.2 0 0 0-11.2 2"/><path d="M8 18v2M12 17v3M16 18v2"/></svg>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10h13M5 14h15M7 18h10"/></svg>
+          <span>PAPER</span>
+        </div>
+        <p class="lede">
+          Don’t tokenize the payable. Don’t cash the pot.
+          Public master app on GitHub. Paid doors sell education and a kit. The felt stays paper chips.
+          Polymarket drawer stays WATCH.
+        </p>
+        <p class="motto">Tip jar ≠ till. Commercial access = kit or tuition.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="https://github.com/contentctv/codybeartv-ai-POLYMARKET-HOLDEM">Repo</a>
+          <a class="btn btn-stripe" id="buy-kit" href="#" data-stripe="OPERATOR_FILL">Buy kit $47</a>
+          <a class="btn btn-ghost" href="https://supercool.com/@codybearstudio">Supercool shop</a>
+          <a class="btn btn-ghost" href="https://wa.me/50662202955?text=CIPHER%20COAST%203-IN-1">WhatsApp desk</a>
+          <a class="btn btn-ghost" href="https://pay.bitcoinjungle.app/codybeartv">Bitcoin Jungle propina</a>
+          <span class="btn btn-hold" aria-disabled="true">Discord · HOLD</span>
+        </div>
+        <p class="stripe-note" id="stripe-empty">
+          Buy kit $47 is a dead control until the operator types <code>STRIPE_LINK $47</code>.
+          href stays <code>#</code>. This build does not invent a buy.stripe.com URL.
+          WhatsApp desk is the live fallback. Custom domain is $10/mo and still HOLD.
+        </p>
+      </div>
+    </section>
+
+    <h2>3-IN-1 line</h2>
+    <div class="trio">
+      <article>
+        <h3>Service</h3>
+        <p>Paper table and academy door. WhatsApp desk routes the ticket. Felt stays paper chips. Polymarket drawer stays WATCH.</p>
+      </article>
+      <article>
+        <h3>Product</h3>
+        <p>$47 kit on Supercool when the operator Adds. GitHub clone is free and paper. Stripe Buy kit stays dead until STRIPE_LINK.</p>
+      </article>
+      <article>
+        <h3>AI</h3>
+        <p>COAST-MBA stamps Territory / Offer / Gate / Radar / Thursday draft / Air gap. grok-4.6 only. GENERATE off. Human publishes.</p>
+      </article>
+    </div>
+
+    <h2>Doors</h2>
+    <table class="doors">
+      <thead>
+        <tr>
+          <th>Door</th>
+          <th>What you pay</th>
+          <th>What you get</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>GitHub</td>
+          <td>free clone</td>
+          <td>source · paper flags · npm run dev :8080</td>
+          <td class="state">PUBLIC</td>
+        </tr>
+        <tr>
+          <td>Supercool</td>
+          <td>$47 kit</td>
+          <td>prompt pack + cover + run recipe</td>
+          <td class="state">LIST when operator Adds</td>
+        </tr>
+        <tr>
+          <td>Stripe Payment Link</td>
+          <td>$47 kit / $49 academy M0</td>
+          <td>same kit; human issues cca_ if tuition</td>
+          <td class="state">LINK EMPTY until STRIPE_LINK $47</td>
+        </tr>
+        <tr>
+          <td>WhatsApp</td>
+          <td>ticket</td>
+          <td>human routes to Fiverr / Stripe / Supercool</td>
+          <td class="state">LIVE desk +506 6220 2955</td>
+        </tr>
+        <tr>
+          <td>Bitcoin Jungle</td>
+          <td>any sats</td>
+          <td>propina only — not access</td>
+          <td class="state">LIVE tip jar</td>
+        </tr>
+        <tr>
+          <td>Fountain</td>
+          <td>audio zaps</td>
+          <td>professorwbtc@fountain.fm</td>
+          <td class="state">not access</td>
+        </tr>
+        <tr>
+          <td>Grok Build / Bot marketplace</td>
+          <td>—</td>
+          <td>this page + MBA prompt</td>
+          <td class="state">PAPER · no invented listing</td>
+        </tr>
+        <tr>
+          <td>Discord</td>
+          <td>—</td>
+          <td>—</td>
+          <td class="state">HOLD · no live Discord</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Run the public app</h2>
+    <pre class="run">git clone https://github.com/contentctv/codybeartv-ai-POLYMARKET-HOLDEM
+cd codybeartv-ai-POLYMARKET-HOLDEM
+npm install
+npm run dev        # 0.0.0.0:8080
+npm run typecheck
+npm run build</pre>
+    <p class="flags">
+      LIVE_TRADING=false. GENERATE off in the repo flags. grok-4.6 only.
+      No live trading. No CLOB on this page. Felt pot stays paper.
+    </p>
+
+    <aside class="notice">
+      <strong>Financial Engineering Notice.</strong>
+      Education and a paper table. Not an offer of securities. Not live trading.
+      API tokens are login credentials. Tip jar is propina, not a till.
+      Ley 10961 registration is AML supervision, not a license to intermediate.
+      Commercial access = kit or tuition. CODYBEARTV GLOBAL MEDIA STUDIOS LIMITADA
+    </aside>
+
+    <footer>
+      <div class="mark">CIPHER COAST 3-IN-1 · PAPER HOST</div>
+      <p>CODYBEARTV GLOBAL MEDIA STUDIOS LIMITADA</p>
+      <p>
+        Canonical repo:
+        <a href="https://github.com/contentctv/codybeartv-ai-POLYMARKET-HOLDEM">github.com/contentctv/codybeartv-ai-POLYMARKET-HOLDEM</a>
+      </p>
+      <p>GitHub Pages, if the operator enables <code>docs/</code> or <code>site/</code>:
+        contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -13,3 +13,12 @@ npm run dev        # 0.0.0.0:8080
 npm run typecheck
 npm run build
 ```
+
+## Paper-host landing
+
+Static Cipher Coast 3-IN-1 page: [`site/index.html`](site/index.html) (Pages copy: [`docs/`](docs/)).
+
+- Buy kit $47 stays `href="#"` until a human pastes `STRIPE_LINK`
+- Discord HOLD
+- Operator docs: [`docs/PAYWALL.md`](docs/PAYWALL.md) · [`docs/APPROVAL.md`](docs/APPROVAL.md) · [`CHANNELS.md`](CHANNELS.md) · [`SUPERCOOL_SHOP_LISTING.md`](SUPERCOOL_SHOP_LISTING.md)
+
