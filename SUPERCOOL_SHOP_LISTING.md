@@ -6,7 +6,7 @@ STATUS=LANDING | SUPERCOOL_BURN=0 | STRIPE_LIVE=off | LIVE_TRADING=false | GENER
 
 Live product: https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba
 
-This file remains the field sheet. Stripe Buy kit still stays `href="#"`. Do not invent a checkout URL.
+This file remains the field sheet. Stripe Buy kit is the operator-pasted Payment Link (James, 2026-09-10). `STRIPE_LIVE` still requires operator confirm for live-mode API charging.
 
 ## Add Product fields (listed)
 
@@ -20,13 +20,13 @@ This file remains the field sheet. Stripe Buy kit still stays `href="#"`. Do not
 | What it is not | Access to a live table, CLOB, wallet, or pot |
 | Canonical repo | https://github.com/contentctv/codybeartv-ai-POLYMARKET-HOLDEM |
 | Pages | https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/ from main `/docs` |
-| Stripe | Buy kit stays `href="#"` until a human pastes `STRIPE_LINK $47` |
+| Stripe | https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00 (`STRIPE_LINK $47` DONE) |
 | Discord | HOLD |
 | Free door | 8-hour `cca_` DEVELOPER ACCESS after follow @ContentCTV — see `docs/DEV_ACCESS.md` |
 
 Coast Chips stay off-Stripe. Poly drawer = WATCH. Bitcoin Jungle = propina. `cca_` is a login credential, HITL.
 
-Sibling codybear-ai PR #73 squash-merged as `f1ad44df`. APPROVE TO PUBLISH LANDING checked DONE.
+Sibling codybear-ai PR #73 squash-merged as `f1ad44df`. APPROVE TO PUBLISH LANDING checked DONE. STRIPE_LINK $47 checked DONE.
 
 ## Financial Engineering Notice
 

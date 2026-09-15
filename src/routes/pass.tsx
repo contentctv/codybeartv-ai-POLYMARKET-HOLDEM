@@ -157,7 +157,7 @@ function Pass() {
         <a className="text-teal underline-offset-4 hover:underline" href={PAGES_LANDING}>
           Pages
         </a>
-        . Buy kit stays <code>{BUY_KIT_HREF}</code>.
+        . Buy kit Payment Link: <code>{BUY_KIT_HREF}</code>.
       </p>
       {msg ? <p className="text-sm text-teal">{msg}</p> : null}
       {isPending ? <p className="text-xs text-muted">Checking session…</p> : null}

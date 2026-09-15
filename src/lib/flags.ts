@@ -16,11 +16,12 @@ export const DEFAULT_MODEL = "grok-4.6";
 export const FOLLOW_HANDLE = "ContentCTV";
 export const FOLLOW_INTENT = "https://x.com/intent/follow?screen_name=ContentCTV";
 
-/** Supercool $47 kit — listed. Stripe Buy kit stays `#` until STRIPE_LINK. */
+/** Supercool $47 kit — listed. Stripe Buy kit is the pasted STRIPE_LINK $47 (James, 2026-09-10). */
 export const SUPERCOOL_PRODUCT =
   "https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba";
 export const PAGES_LANDING = "https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/";
-export const BUY_KIT_HREF = "#" as const;
+export const BUY_KIT_HREF =
+  "https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00" as const;
 
 /** Follow-pass login credential. Not a wallet. Not CLOB. */
 export const DEV_ACCESS_HOURS = 8;

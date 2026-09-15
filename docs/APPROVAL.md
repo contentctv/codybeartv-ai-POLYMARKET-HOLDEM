@@ -5,7 +5,7 @@ DISCORD=HOLD | DNS_CUTOVER=off | WINGMAN_PUSH=off | SUPERCOOL_BURN=0
 
 One gate at a time. If anyone says “just publish” or “just push,” stop here.
 
-- [ ] `STRIPE_LINK $47 <url>`
+- [x] `STRIPE_LINK $47 https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00`
 - [x] `SUPERCOOL LIST CIPHER-COAST-3IN1 $47`
 - [x] `APPROVE TO PUBLISH LANDING`
 
@@ -15,11 +15,11 @@ Operator: BONES / James A+B+F
 
 Date: 2026-09-10
 
-Signature: STAMP: APPROVE TO PUBLISH LANDING (James A+B+F 2026-09-10)
+Signature: STAMP: STRIPE_LINK $47 (James 2026-09-10). STAMP: APPROVE TO PUBLISH LANDING (James A+B+F 2026-09-10)
 
 Supercool live listing: https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba
 
-Buy kit $47 stays `href="#"`. Do not invent a Payment Link. Discord HOLD. Do not mint. Do not send CLOB. LIVE_TRADING=false. GENERATE=off.
+Buy kit $47 href is https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00 (human-pasted Payment Link). Payment Link can be live on the Buy button while `STRIPE_LIVE` stays off until a named operator confirm for live-mode API charging. Discord HOLD. Do not mint. Do not send CLOB. LIVE_TRADING=false. GENERATE=off.
 
 Sibling codybear-ai PR #73 squash-merged as `f1ad44df`.
 
