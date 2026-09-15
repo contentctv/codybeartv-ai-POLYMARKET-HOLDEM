@@ -20,9 +20,9 @@ import {
   SUPERCOOL_PRODUCT,
 } from "./flags.ts";
 
-test("LIVE_TRADING stays false and Buy kit href stays #", () => {
+test("LIVE_TRADING stays false and Buy kit href is the pasted STRIPE_LINK $47", () => {
   assert.equal(LIVE_TRADING, false);
-  assert.equal(BUY_KIT_HREF, "#");
+  assert.equal(BUY_KIT_HREF, "https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00");
   assert.equal(DEV_ACCESS_HOURS, 8);
   assert.equal(FOLLOW_HANDLE, "ContentCTV");
   assert.match(SUPERCOOL_PRODUCT, /2036581b-09df-4e3e-bea0-9bfcdd0d4cba/);

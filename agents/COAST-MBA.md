@@ -47,7 +47,7 @@ SUPERCOOL_BURN=0
 
 Lift one gate at a time, only after a named card:
 
-- `STRIPE_LINK $47 <url>`
+- [x] `STRIPE_LINK $47 https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00` — Buy kit active; `STRIPE_LIVE` still needs operator confirm for live-mode API. LIVE_TRADING=false.
 - [x] `SUPERCOOL LIST CIPHER-COAST-3IN1 $47` — https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba
 - [x] `APPROVE TO PUBLISH LANDING` — Pages https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/ from main `/docs`
 

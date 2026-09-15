@@ -4,7 +4,7 @@ STATUS=LANDING | STRIPE_LIVE=off | LIVE_TRADING=false | GENERATE=off | Discord H
 
 Paper-safe login credential. **Not a wallet. Not live trading. Not CLOB margin.**
 
-Anyone who follows X `@contentctv` / `@ContentCTV` (see `FOLLOW_HANDLE` / `FOLLOW_INTENT` in `src/lib/flags.ts`) can claim one 8-hour `cca_` key. Commercial upsell is the Supercool kit and the GitHub Pages paywall. Buy kit $47 stays `href="#"`. Do not invent a `buy.stripe.com` URL.
+Anyone who follows X `@contentctv` / `@ContentCTV` (see `FOLLOW_HANDLE` / `FOLLOW_INTENT` in `src/lib/flags.ts`) can claim one 8-hour `cca_` key. Commercial upsell is the Supercool kit, the GitHub Pages paywall, and the pasted Stripe Payment Link. Buy kit $47 is https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00. Do not invent a second `buy.stripe.com` URL.
 
 ## Operator flow
 
@@ -17,7 +17,7 @@ Anyone who follows X `@contentctv` / `@ContentCTV` (see `FOLLOW_HANDLE` / `FOLLO
 
    - Supercool kit $47: https://supercool.com/@codybearstudio/product/2036581b-09df-4e3e-bea0-9bfcdd0d4cba
    - Pages paywall: https://contentctv.github.io/codybeartv-ai-POLYMARKET-HOLDEM/
-   - Stripe Buy kit: still `#` until a human pastes `STRIPE_LINK $47`
+   - Stripe Buy kit: https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00 (`STRIPE_LINK $47` DONE; `STRIPE_LIVE` still needs operator confirm)
 
 HITL: a human may also issue a `cca_` tuition login. This 8-hour path is the free follow gate, not a paid seat.
 
@@ -36,7 +36,7 @@ HITL: a human may also issue a `cca_` tuition login. This 8-hour path is the fre
 
 - Do not mint a second auth system. Claim requires the existing X session + follow pass.
 - Do not treat Bitcoin Jungle / Fountain as access.
-- Do not enable Pages Stripe from this card. `STRIPE_LIVE=off`.
+- Do not flip `STRIPE_LIVE` from this card. Payment Link is already on Buy kit; live-mode API still needs a named confirm.
 - Do not stand Discord.
 - Do not send CLOB. Felt pot stays paper.
 

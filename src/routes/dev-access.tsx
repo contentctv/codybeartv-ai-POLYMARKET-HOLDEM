@@ -187,7 +187,7 @@ function DevAccess() {
       <Card>
         <CardHeader>
           <CardTitle>After 8 hours</CardTitle>
-          <CardDescription>Sales point to Supercool and Pages. Stripe Buy kit stays dead.</CardDescription>
+          <CardDescription>Sales point to Supercool, Pages, and the pasted Stripe Payment Link.</CardDescription>
         </CardHeader>
         <CardContent className="flex flex-wrap gap-2">
           <Button asChild variant="teal">
@@ -201,7 +201,7 @@ function DevAccess() {
             </a>
           </Button>
           <Button asChild variant="ghost">
-            <a href={BUY_KIT_HREF} id="buy-kit" data-stripe="OPERATOR_FILL">
+            <a href={BUY_KIT_HREF} id="buy-kit" data-stripe={BUY_KIT_HREF}>
               Buy kit $47
             </a>
           </Button>

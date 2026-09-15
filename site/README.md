@@ -18,7 +18,7 @@ Sibling codybear-ai PR #73 squash-merged as `f1ad44df`.
 
 ## Operator
 
-1. Create a Stripe Payment Link $47 in **test mode**. Then type `STRIPE_LINK $47 https://buy.stripe.com/...` so a human can paste it into the Buy kit button. This build leaves `href="#"`. Do not invent a Stripe URL.
+1. `STRIPE_LINK $47` is **DONE**. Buy kit href is https://buy.stripe.com/eVq6oz9eb5cnaPIeMC9ws00 (James, 2026-09-10). `STRIPE_LIVE` still requires a named operator confirm for live-mode API charging. Payment Link can be live on the button while that flag stays off. If `STRIPE_PAYMENT_LINK` is set, it must match this URL. Do not invent a second Stripe URL.
 2. Pages source is `docs/` on `main`. A bot does not flip the Pages toggle; this stamp authorizes the landing copy.
 3. Supercool Add Product is already listed. Field sheet: `SUPERCOOL_SHOP_LISTING.md`.
 4. Discord stays HOLD until a named lift.
