@@ -1,5 +1,7 @@
 # AGENTS
 
+Locked context is the Sovereign Mesh addendum in `.grok/rules/sovereign-mesh.md` and `.cursor/rules/sovereign-mesh.mdc`. It overrides generic defaults. Paper-first unless a human types GATE_LIFT.
+
 This workspace is POLYMARKET HOLD'EM plus a PAPER member front end at `apps/member-fe`.
 
 ## Gates
